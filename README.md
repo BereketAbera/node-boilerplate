@@ -1,0 +1,1 @@
+## Node js, Typescript, Swagger and Tsoa boilerplate
