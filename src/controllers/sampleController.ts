@@ -10,11 +10,12 @@ import {
   } from "tsoa";
 import { UsersService } from "../services/sampleService";
 import { User, UserCreationParams } from "../reqModels/user";
+import {TestAttributes} from '../models/Test';
   
 @Route("users")
 export class UsersController extends Controller {
     @Get()
-    public async getUsers(): Promise<User[]>{
+    public async getUsers(): Promise<TestAttributes[]>{
         return new UsersService().getUsers();
     }
     @Get("{userId}")
@@ -35,3 +36,5 @@ export class UsersController extends Controller {
         return;
     }
 }
+
+export {TestAttributes}

@@ -4,8 +4,8 @@ export interface User {
     email: string;
     name: string;
     status?: 'HAPPY' | 'SAD';
-    phoneNumbers: string[]
+    phoneNumbers?: string[]
 }
 
 // A post request should not contain an id.
-export type UserCreationParams = Pick<User, "email" | "name" | "phoneNumbers">;
+export type UserCreationParams = Pick<User, "email" | "name">;

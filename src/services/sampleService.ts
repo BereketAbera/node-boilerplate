@@ -1,3 +1,5 @@
+// import { TestAttributes } from "src/controllers/sampleController";
+import { Test, TestAttributes } from "../models/Test";
 import { User, UserCreationParams } from "../reqModels/user";
 
 export class UsersService {
@@ -19,13 +21,7 @@ export class UsersService {
     };
   }
 
-  public getUsers(): User[] {
-    return [{
-      id: 1,
-      email: "jane@doe.com",
-      name: "Jane Doe",
-      status: "HAPPY",
-      phoneNumbers: [],
-    }];
+  public getUsers(): Promise<TestAttributes[]> {
+    return Test.findAll({attributes: ['id', 'name']});
   }
 }
